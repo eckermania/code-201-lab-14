@@ -5,6 +5,8 @@
 // Set up an empty cart for use on this page.
 var cart = new Cart([]);
 
+var dropDownItem = document.getElementById('items');
+
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
@@ -12,7 +14,9 @@ function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
   var selectElement = document.getElementById('items');
   for (var i in Product.allProducts) {
-
+    var dropEl = document.createElement('option');
+    dropEl.textContent = Product.allProducts[i].name;
+    dropDownItem.appendChild(dropEl);
   }
 
 }
